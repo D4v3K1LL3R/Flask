@@ -22,4 +22,14 @@ def add(num1,num2):#creacion de una vista
 
     return '{}+{}={}'.format(num1,num2,num1+num2)
 
+#suma.html
+@app.route('/adds/<int:num1>/<int:num2>')
+@app.route('/adds/<float:num1>/<float:num2>')
+@app.route('/adds/<float:num1>/<int:num2>')
+@app.route('/adds/<int:num1>/<float:num2>')
+@app.route('/adds/<int:num1>/<int:num2>')
+def adds(num1,num2):#creacion de una vista
+
+    return render_template("add.html",num1=num1,num2=num2)
+
 app.run(debug=True, port=8000, host='0.0.0.0')
