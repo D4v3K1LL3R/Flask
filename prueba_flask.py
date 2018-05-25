@@ -10,7 +10,7 @@ def index(name='Mundo', ape='Martinez'):#creacion de una vista
     name=request.args.get('name', name)
     ape=request.args.get('ape', ape)
 
-    return 'Hola {}''{}'.format(name, ape)
+    return render_template("hiw.html",name=name,ape=ape)
 
 #suma
 @app.route('/add/<int:num1>/<int:num2>')
